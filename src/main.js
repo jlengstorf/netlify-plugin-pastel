@@ -1,4 +1,4 @@
-// This is the main file for the Netlify Build plugin {{name}}.
+// This is the main file for the Netlify Build plugin pastel.
 // Please read the comments to learn more about the Netlify Build plugin syntax.
 // Find more information about how to write Netlify Build plugins at
 // https://github.com/netlify/build/blob/master/docs/creating-a-plugin.md
@@ -6,7 +6,7 @@
 /* eslint-disable no-unused-vars */
 module.exports = {
   // Name of the Netlify Build plugin. Should match the package name on npm.
-  name: 'netlify-plugin-{{name}}',
+  name: 'netlify-plugin-pastel',
 
   // The plugin main logic uses `on...` event handlers that are triggered on
   // each new Netlify Build.
@@ -85,7 +85,7 @@ module.exports = {
   // For example:
   //
   //   plugins
-  //     - package: netlify-plugin-{{name}}
+  //     - package: netlify-plugin-pastel
   //       config:
   //         foo: bar
   //
