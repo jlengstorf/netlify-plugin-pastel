@@ -1,7 +1,7 @@
 {
   "name": "netlify-plugin-pastel",
   "version": "0.0.1",
-  "description": "Netlify Build plugin - A Netlify build plugin to add in-place commenting (via Pastel) to Netlify deploy previews.",
+  "description": "A Netlify build plugin to add in-place commenting (via Pastel) to Netlify deploy previews.",
   "main": "src/main.js",
   "files": [
     "src",
@@ -11,18 +11,15 @@
     "netlify-plugin",
     "netlify"
   ],
-  "author": "Jason Lengstorf <jason.lengstorf@netlify.com> <jason.lengstorf@netlify.com>",
+  "author": "Jason Lengstorf <jason.lengstorf@netlify.com>",
   "license": "MIT",
-  "repository": "jlengstorf/netlify-plugin-pastel",
+  "repository": "https://github.com/jlengstorf/netlify-plugin-pastel",
   "directories": {
     "lib": "src",
     "test": "test"
   },
-  "engines": {
-    "node": ">10"
-  },
   "scripts": {
-    "build": "netlify-build",
+    "build": "rm -f build/index.html && mkdir -p build && cp dev/index.html build/index.html && netlify-build",
     "test": "npm run lint && npm run ava",
     "lint": "npm run eslint && npm run prettier",
     "eslint": "eslint --ignore-path .gitignore --fix --cache --format=codeframe --max-warnings=0 \"{src,init}/**/*.js\"",
@@ -30,7 +27,14 @@
     "ava": "ava --verbose",
     "release": "release-it"
   },
-  "dependencies": {},
+  "dependencies": {
+    "glob": "^7.1.6",
+    "hastscript": "^5.1.1",
+    "rehype-parse": "^6.0.2",
+    "rehype-stringify": "^6.0.1",
+    "unified": "^8.4.2",
+    "unist-util-visit": "^2.0.1"
+  },
   "devDependencies": {
     "@netlify/build": "^0.1.37",
     "ava": "^2.4.0",

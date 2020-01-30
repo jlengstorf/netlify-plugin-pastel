@@ -1,8 +1,7 @@
-<img src="static/logo.png" width="400"/><br>
+# netlify-plugin-pastel
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/{{siteId}}/deploy-status)](https://app.netlify.com/sites/{{username}}/deploys)
-
-Netlify Build plugin pastel - A Netlify build plugin to add in-place commenting (via Pastel) to Netlify deploy previews..
+A Netlify build plugin to add in-place commenting (via [Pastel][pastel]) to
+Netlify deploy previews.
 
 # Install
 
@@ -21,13 +20,4 @@ plugins:
     config: {}
 ```
 
-# Configuration
-
-The following `config` options are available:
-
-## foo
-
-_Type_: `string`\
-_Default_: `bar`
-
-Example description of the `foo` option.
+[pastel]: https://usepastel.com/
