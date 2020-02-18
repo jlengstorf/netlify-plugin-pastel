@@ -19,7 +19,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "rm -f build/index.html && mkdir -p build && cp dev/index.html build/index.html && netlify-build",
+    "build": "rm -rf build && mkdir -p build && cp -a dev/ build && netlify-build",
     "test": "npm run lint && npm run ava",
     "lint": "npm run eslint && npm run prettier",
     "eslint": "eslint --ignore-path .gitignore --fix --cache --format=codeframe --max-warnings=0 \"{src,init}/**/*.js\"",
