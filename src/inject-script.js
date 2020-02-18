@@ -20,14 +20,18 @@ const addScriptNode = () => tree => {
 
 exports.injectScript = filePath =>
   new Promise(resolve => {
-    const markup = unified()
-      .use(parse)
-      .use(addScriptNode)
-      .use(stringify)
-      .processSync(fs.readFileSync(filePath))
-      .toString();
+    try {
+      const markup = unified()
+        .use(parse)
+        .use(addScriptNode)
+        .use(stringify)
+        .processSync(fs.readFileSync(filePath))
+        .toString();
 
-    fs.writeFileSync(filePath, markup);
+      fs.writeFileSync(filePath, markup);
+    } catch (error) {
+      console.error(`error injecting script into ${filePath}`);
+    }
 
     resolve(true);
   });
