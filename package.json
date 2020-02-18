@@ -1,6 +1,6 @@
 {
   "name": "netlify-plugin-pastel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Netlify build plugin to add in-place commenting (via Pastel) to Netlify deploy previews.",
   "main": "src/main.js",
   "files": [
