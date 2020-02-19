@@ -1,0 +1,8 @@
+## these security headers are created by gatsby-plugin-netlify
+## we need to remove the X-Frame-Options: DENY to allow Pastel to work
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin

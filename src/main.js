@@ -1,3 +1,4 @@
+const fs = require('fs');
 const glob = require('glob');
 const { injectScript } = require('./inject-script');
 
@@ -16,6 +17,12 @@ module.exports = {
 
     // ...but wait for them all to finish before moving on
     await Promise.all(promises);
+
+    // make sure frames are allowed so Pastel can do its thang
+    const [headersFile] = glob.sync(`${BUILD_DIR}/_headers`);
+    const headers = fs.readFileSync(headersFile, 'utf8');
+    const cleaned = headers.replace(/^\s*x-frame-options:.*$/gim, '');
+    fs.writeFileSync(headersFile, cleaned, { encoding: 'utf8' });
 
     // TODO how do we log this in a better way?
     console.log(
