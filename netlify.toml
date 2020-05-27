@@ -1,6 +1,7 @@
-plugins:
+[build]
+  publish = "build"
+
+[[plugins]]
   # Use the current plugin in builds for testing and debugging.
   # Local path to the plugin.
-  - package: .
-build:
-  publish: build
+  package = "."
